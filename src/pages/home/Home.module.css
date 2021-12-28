@@ -1,0 +1,75 @@
+.home-left {
+  margin-right: 30px;
+}
+
+.home-left h2 {
+  text-align: left;
+  font-size: 1.35em;
+}
+
+.home-right {
+  margin-left: 30px;
+}
+
+.home-right form {
+  /* background: rgba(0, 0, 0, 0.75); */
+  /* color: var(--white, whitesmoke);
+  background: var(--green, green); */
+  padding: 20px;
+}
+
+.transactions {
+  list-style: none;
+}
+
+.transactions li {
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  background: var(--white, whitesmoke);
+  border: 0.1px solid var(--light-green, lightgreen);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.09);
+  border-left: 5px solid var(--green, green);
+  border-radius: 3px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.transactions .name {
+  color: #777;
+  font-size: 1.15em;
+  text-align: left;
+}
+.transactions .amount {
+  margin-left: auto;
+  padding: 0 10px;
+  margin-right: 40px;
+  color: var(--green, green);
+  font-weight: bold;
+  font-size: 1.6em;
+}
+.transactions div {
+  background: red;
+  width: 50px;
+}
+.transactions .date {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+}
+.transactions button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  background: var(--white, whitesmoke);
+  border: none;
+  padding: 5px;
+  line-height: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.transactions button:hover {
+  transform: rotate(135deg);
+}

@@ -1,0 +1,78 @@
+.navbar {
+  background: var(--green, green);
+  padding: 15px;
+  position: relative;
+}
+
+.brand {
+  margin-right: auto;
+  color: white;
+  font-size: 1.5em;
+}
+
+.logo {
+  /* position: absolute;
+  top: 25px;
+  left: calc(50% - 100px);
+  width: 200px;
+  overflow: hidden;
+  filter: brightness(65%); */
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  width: 90%;
+  margin: auto;
+  font-size: 1em;
+}
+
+.link {
+  width: fit-content;
+  margin: 20px auto;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-size: 0.65em;
+  transition: all 0.2s ease;
+  background: rgba(0, 0, 0, 0.15);
+  color: var(--light-green, lightgreen);
+  border-radius: 4px;
+  border: 2px solid transparent;
+}
+
+.link:hover {
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: none;
+  border-color: var(--light-green, lightgreen);
+}
+
+.link:last-of-type {
+  margin-left: 10px;
+}
+
+.logout {
+  margin: 0;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-size: 0.65em;
+  transition: all 0.2s ease;
+  background: var(--light-green, lightgreen);
+  color: var(--green, green);
+  border-radius: 4px;
+  border: 2px solid transparent;
+}
+
+.logout:hover {
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: none;
+  color: var(--light-green, lightgreen);
+  border-color: var(--light-green, lightgreen);
+}
+
+.display {
+  font-size: 0.75em;
+  /* color: var(--grey); */
+  color: var(--lightgreen, lightgreen);
+  margin: 0 25px;
+}

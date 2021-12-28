@@ -1,38 +1,119 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background: var(--white, whitesmoke);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  flex: 1;
+  max-width: 1200px;
+  width: 90%;
+  margin: 50px auto 20px;
+  min-height: calc(100vh - 185px);
+  /* z-index: 12; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tint {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.wrapper {
+  /* display: flex;
+  justify-content: center; */
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.btn {
+  font-family: inherit;
+  font-weight: normal;
+  background: var(--green, green);
+  color: var(--white, whitesmoke);
+  border: 1px solid var(--green, green);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8em;
+  transition: all 0.2s ease;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background: var(--light-green, lightgreen);
+  color: var(--green, green);
+  border-color: var(--green, green);
+  box-shadow: none;
+}
+
+.error {
+  color: red;
+}
+
+/* FORMS */
+form {
+  max-width: 400px;
+  width: 90%;
+  padding: 20px;
+  margin: 0 auto;
+  /* padding: 10px 0; */
+  display: flex;
+  flex-direction: column;
+  color: var(--white, whitesmoke);
+  background: var(--green, green);
+}
+
+form h2,
+form h3 {
+  padding: 20px;
+  margin: 0 auto;
+  /* color: var(--green, green); */
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+span {
+  margin-bottom: 2px;
+  color: var(--white, whitesmoke);
+  /* color: var(--green, green); */
+  font-size: 0.85em;
+}
+
+input {
+  border: transparent;
+  border-radius: 2px;
+  font-family: inherit;
+  font-weight: lighter;
+  font-size: 1.01em;
+  padding: 4px 6px;
+  outline: 2px solid transparent;
+}
+
+input:focus {
+  outline: 2px solid var(--green, green);
+}
+
+button {
+  margin: 20px auto;
+}
+
+footer p {
+  padding: 20px;
+  font-size: 0.7em;
+}
+
+.btn:disabled {
+  box-shadow: none;
+  color: var(--light-green);
+  background: var(--grey, grey);
 }
