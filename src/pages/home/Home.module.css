@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .home-left {
   margin-right: 30px;
 }
@@ -12,9 +19,6 @@
 }
 
 .home-right form {
-  /* background: rgba(0, 0, 0, 0.75); */
-  /* color: var(--white, whitesmoke);
-  background: var(--green, green); */
   padding: 20px;
 }
 
@@ -24,21 +28,30 @@
 
 .transactions li {
   margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background: var(--white, whitesmoke);
-  border: 0.1px solid var(--light-green, lightgreen);
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.09);
-  border-left: 5px solid var(--green, green);
+  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+  border-left: 7px solid var(--green, green);
   border-radius: 3px;
   padding: 20px;
   position: relative;
   overflow: hidden;
 }
+
+.transactions li:hover {
+  background: #eaeaea;
+}
 .transactions .name {
   color: #777;
   font-size: 1.15em;
   text-align: left;
+  word-wrap: anywhere;
 }
 .transactions .amount {
   margin-left: auto;
@@ -49,7 +62,6 @@
   font-size: 1.6em;
 }
 .transactions div {
-  background: red;
   width: 50px;
 }
 .transactions .date {
@@ -57,6 +69,7 @@
   bottom: 0;
   right: 0;
   padding: 5px;
+  font-size: 0.8em;
 }
 .transactions button {
   position: absolute;
@@ -68,8 +81,68 @@
   padding: 5px;
   line-height: 0;
   cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 .transactions button:hover {
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
   transform: rotate(135deg);
+}
+
+@media (max-width: 900px) {
+  .home-left {
+    margin: 50px auto;
+    width: 100%;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  .home-right {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    margin: 0 auto;
+  }
+  .home-left h2 {
+    max-width: 500px;
+    margin: auto;
+  }
+  .transactions {
+    max-width: 500px;
+    margin: auto;
+  }
+  .transactions li {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  .transactions .name {
+    word-wrap: anywhere;
+    padding-right: 20px;
+  }
+  .transactions .amount {
+    margin-left: 0;
+    padding: 0px;
+    margin-right: 0;
+  }
+  .transactions .date {
+    bottom: 5px;
+    font-style: italic;
+    right: 5px;
+  }
+}
+
+@media (max-width: 500px) {
+  .transactions li {
+    width: 90%;
+  }
+  .home-right form {
+    padding: 15px;
+  }
 }

@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
+import { useThemeContext } from './hooks/useThemeContext';
 // components
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
@@ -12,13 +13,14 @@ import background from './assets/background1.jpg';
 
 function App() {
   const { user, authIsReady } = useAuthContext();
+  const { mode } = useThemeContext();
   
   return (
     <div 
       className="App" 
       style={{ backgroundImage: `url(${background})` }}
     >
-      <div className="tint">
+      <div className={`tint ${mode}`}>
 
       {authIsReady && 
         <BrowserRouter>

@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .App {
   text-align: center;
   background: var(--white, whitesmoke);
@@ -6,48 +13,72 @@
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .container {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   max-width: 1200px;
   width: 90%;
   margin: 50px auto 20px;
   min-height: calc(100vh - 185px);
-  /* z-index: 12; */
 }
 
-.tint {
-  background: rgba(0, 0, 0, 0.25);
+.tint.light {
+  background: rgba(50, 50, 50, 0.25);
 }
-
+.tint.dark {
+  background: rgba(0, 0, 0, 0.55);
+}
+h2.dark {
+  color: var(--light-green, lightgreen);
+}
+.transactions li.dark {
+  background: blue;
+}
+div.dark {
+  background: var(--dark-green, darkgreen);
+}
+form.dark {
+  background: var(--dark-green, darkgreen);
+}
 .wrapper {
-  /* display: flex;
-  justify-content: center; */
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 2fr 1fr;
   grid-template-columns: 2fr 1fr;
 }
 
 .btn {
   font-family: inherit;
   font-weight: normal;
-  background: var(--green, green);
-  color: var(--white, whitesmoke);
+  background: var(--light-green, green);
+  color: var(--green, black);
   border: 1px solid var(--green, green);
   padding: 6px 12px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.8em;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  -webkit-box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover {
-  background: var(--light-green, lightgreen);
+  background: #9cac98;
   color: var(--green, green);
   border-color: var(--green, green);
+  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -61,22 +92,32 @@ form {
   width: 90%;
   padding: 20px;
   margin: 0 auto;
-  /* padding: 10px 0; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   color: var(--white, whitesmoke);
   background: var(--green, green);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
 }
 
 form h2,
 form h3 {
   padding: 20px;
   margin: 0 auto;
-  /* color: var(--green, green); */
 }
 
 label {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   text-align: left;
   margin-bottom: 10px;
@@ -85,7 +126,6 @@ label {
 span {
   margin-bottom: 2px;
   color: var(--white, whitesmoke);
-  /* color: var(--green, green); */
   font-size: 0.85em;
 }
 
@@ -113,7 +153,21 @@ footer p {
 }
 
 .btn:disabled {
+  -webkit-box-shadow: none;
   box-shadow: none;
   color: var(--light-green);
   background: var(--grey, grey);
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 500px) {
+  form {
+    max-width: 350px;
+    width: 90%;
+  }
 }

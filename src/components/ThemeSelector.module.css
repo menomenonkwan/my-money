@@ -1,0 +1,23 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+.theme {
+  line-height: 0;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.theme img {
+  width: 20px;
+}
+
+@media (max-width: 500px) {
+  .theme {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}

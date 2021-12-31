@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSignup } from '../../hooks/useSignup';
+import { useThemeContext } from '../../hooks/useThemeContext';
 
 export default function Signup() {
   const [displayName, setDisplayName] = useState('');
@@ -7,7 +8,8 @@ export default function Signup() {
   const [password, setPassword] = useState('');
   const [passwordCheck, setPasswordCheck] = useState('');
   const [noMatch, setNoMatch] = useState(true);
-    const { signup, loading, error } = useSignup();
+  const { mode } = useThemeContext();
+  const { signup, loading, error } = useSignup();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,7 +24,7 @@ export default function Signup() {
   }, [password, passwordCheck]);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={mode}>
       <h2>Signup</h2>
       <label>
         <span>username:</span>
@@ -30,7 +32,7 @@ export default function Signup() {
           type="text"
           onChange={(e) => setDisplayName(e.target.value)}
           value={displayName}
-          // required
+          required
         />
       </label>
       <label>
@@ -39,7 +41,7 @@ export default function Signup() {
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
-          // required
+          required
         />
       </label>
       <label>
@@ -48,7 +50,7 @@ export default function Signup() {
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
-          // required
+          required
         />
       </label>
       <label>
@@ -57,7 +59,7 @@ export default function Signup() {
           type="password"
           onChange={(e) => setPasswordCheck(e.target.value)}
           value={passwordCheck}
-          // required
+          required
         />
       </label>
 

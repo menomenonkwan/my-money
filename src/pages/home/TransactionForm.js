@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useFirestore } from "../../hooks/useFirestore";
+import { useThemeContext } from "../../hooks/useThemeContext";
 
 export default function TransactionForm({ uid }) {
   const [name, setName] = useState('');
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
   const { addDocument, response } = useFirestore('transactions');
+  const { mode } = useThemeContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,8 +25,8 @@ export default function TransactionForm({ uid }) {
   }, [response.success])
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Add A Transaction</h3>
+    <form onSubmit={handleSubmit} className={mode}>
+      <h3>Add A Transaction</h3>  
       <label>
         <span>Name:</span>
         <input 

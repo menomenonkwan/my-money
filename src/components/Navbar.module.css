@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .navbar {
   background: var(--green, green);
   padding: 15px;
@@ -10,17 +17,12 @@
   font-size: 1.5em;
 }
 
-.logo {
-  /* position: absolute;
-  top: 25px;
-  left: calc(50% - 100px);
-  width: 200px;
-  overflow: hidden;
-  filter: brightness(65%); */
-}
-
 .navbar nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   max-width: 1000px;
   width: 90%;
@@ -29,11 +31,15 @@
 }
 
 .link {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin: 20px auto;
   padding: 5px 15px;
   cursor: pointer;
   font-size: 0.65em;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
   background: rgba(0, 0, 0, 0.15);
   color: var(--light-green, lightgreen);
@@ -43,6 +49,7 @@
 
 .link:hover {
   background: rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: none;
   box-shadow: none;
   border-color: var(--light-green, lightgreen);
 }
@@ -52,10 +59,14 @@
 }
 
 .logout {
+  letter-spacing: 0.05em;
   margin: 0;
   padding: 5px 15px;
   cursor: pointer;
-  font-size: 0.65em;
+  font-size: 0.75em;
+  font-weight: normal;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
   background: var(--light-green, lightgreen);
   color: var(--green, green);
@@ -65,6 +76,7 @@
 
 .logout:hover {
   background: rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: none;
   box-shadow: none;
   color: var(--light-green, lightgreen);
   border-color: var(--light-green, lightgreen);
@@ -72,7 +84,109 @@
 
 .display {
   font-size: 0.75em;
-  /* color: var(--grey); */
   color: var(--lightgreen, lightgreen);
-  margin: 0 25px;
+  margin-right: 10px;
+}
+
+.mobile,
+.mobile-close,
+.mobile-open,
+.mobile-logout {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .navbar nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .display {
+    margin: 0;
+    margin-right: auto;
+  }
+  .mobile-logout {
+    display: unset;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+  .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--light-green, lightgreen);
+    padding-top: 25%;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  .link {
+    font-size: 1.5em;
+    width: 50%;
+    padding: 10px 15px;
+    color: var(--green, black);
+  }
+  .mobile-close {
+    display: unset;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    line-height: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  .mobile-close img {
+    width: 40px;
+  }
+  .link:last-of-type {
+    margin: 0 auto;
+  }
+  .mobile-open {
+    display: unset;
+    position: absolute;
+    top: 24px;
+    right: 30px;
+    line-height: 0;
+    background: transparent;
+    border: none;
+    margin: 0;
+    cursor: pointer;
+  }
+  .mobile-open img {
+    width: 40px;
+  }
+  .links.menu-active {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  .links.menu-inactive {
+    -webkit-transform: translateX(100vw);
+    -ms-transform: translateX(100vw);
+    transform: translateX(100vw);
+  }
 }
